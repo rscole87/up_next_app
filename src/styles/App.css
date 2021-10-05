@@ -1,3 +1,57 @@
+#custom-select {
+  width: 200px;
+  -webkit-box-shadow: 2px 2px 15px 3px #00000007;
+          box-shadow: 2px 2px 15px 3px #00000007;
+  cursor: pointer;
+}
+
+#custom-select #custom-select-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0.8rem;
+  padding: 15px 25px;
+  background-color: white;
+  border-radius: 5px;
+  color: gray;
+}
+
+#custom-select #custom-select-dropdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 200px;
+  margin-top: 3px;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  position: absolute;
+}
+
+#custom-select #custom-select-dropdown div {
+  padding: 5px 25px;
+}
+
+#custom-select #custom-select-dropdown div .custom-select-dropdown-option {
+  font-size: 0.8rem;
+}
+
+#custom-select #custom-select-dropdown div:hover {
+  background-color: rgba(145, 145, 145, 0.329);
+}
+
 #results-section #results-display-div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10,5 +64,42 @@
 #results-section #results-display-div .movie-thumb {
   width: 200px;
   height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-shadow: 2px 2px 15px 3px #00000017;
+          box-shadow: 2px 2px 15px 3px #00000017;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+#results-section #results-display-div .movie-thumb:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+#results-section #results-display-div .movie-thumb:hover .movie-heading-div {
+  height: 25%;
+}
+
+#results-section #results-display-div .movie-thumb .movie-heading-div {
+  width: 100%;
+  height: 0%;
+  padding: 0 15px;
+  background-color: rgba(240, 248, 255, 0.774);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+#results-section #results-display-div .movie-thumb .movie-heading-div h3 {
+  font-size: 0.9rem;
 }
 /*# sourceMappingURL=App.css.map */
