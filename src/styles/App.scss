@@ -1,4 +1,15 @@
 
-.movie-thumb{
-    // min-height: 100px;
+
+#results-section {
+
+    #results-display-div{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+
+        .movie-thumb{
+            width: 200px;
+            height: 300px;
+        }
+    }
 }

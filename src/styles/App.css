@@ -1,1 +1,14 @@
-/* No CSS *//*# sourceMappingURL=App.css.map */
+#results-section #results-display-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 25px;
+}
+
+#results-section #results-display-div .movie-thumb {
+  width: 200px;
+  height: 300px;
+}
+/*# sourceMappingURL=App.css.map */

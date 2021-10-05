@@ -2,8 +2,9 @@ import React from "react";
 
 const MovieThumb = ({ movie }) => {
   return (
-    <div className="movie-thumb">
-      <h3>{movie.Title}</h3>
+    <div className="movie-thumb" style={{backgroundImage: `url(${movie.Poster})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+      <h3>{movie.Title} ({movie.Year})</h3>
+      
     </div>
   );
 };
