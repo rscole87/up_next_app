@@ -1,13 +1,14 @@
 import React from "react";
 import MovieThumb from "./MovieThumbComponent";
 
-const ResultsArea = ({ searchResults }) => {
+const ResultsArea = ({ searchResults, mediaFilter }) => {
   if (searchResults) {
     let movieKeys = [];
-    
+
     let thumbs = searchResults.map((movie) => {
-      if(!movieKeys.includes(movie.imdbID)){
-        movieKeys.push(movie.imdbID)
+      console.log(movie);
+      if (!movieKeys.includes(movie.imdbID)) {
+        movieKeys.push(movie.imdbID);
         return <MovieThumb movie={movie} key={movie.imdbID} />;
       }
     });
@@ -15,6 +16,9 @@ const ResultsArea = ({ searchResults }) => {
     return (
       <>
         <section id="results-section">
+          <div>
+            <h2>{mediaFilter === undefined ? "Filter by media" : mediaFilter === "game" ? "Games" : mediaFilter === "movie" ? "Movies" : "TV"}</h2>
+          </div>
           <div id="results-display-div">{thumbs}</div>
         </section>
       </>

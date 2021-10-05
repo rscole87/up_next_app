@@ -1,4 +1,9 @@
-#custom-select {
+#search-section {
+  input {
+    font-family: "Helvetica", FontAwesome, sans-serif;
+  }
+
+  #custom-select {
     width: 200px;
     box-shadow: 2px 2px 15px 3px #00000007;
     cursor: pointer;
@@ -37,7 +42,7 @@
       }
     }
   }
-
+}
 
 #results-section {
   #results-display-div {
