@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Home from './HomeComponent';
 
 const Main = () => {
+    const [watchList, setWatchList] = useState([]);
+
     return (
-        <Home />
+        <Home watchList={watchList} setWatchList={setWatchList} />
     )
 }
 

@@ -6,7 +6,6 @@ const ResultsArea = ({ searchResults }) => {
     let movieKeys = [];
     
     let thumbs = searchResults.map((movie) => {
-      console.log(movie);
       if(!movieKeys.includes(movie.imdbID)){
         movieKeys.push(movie.imdbID)
         return <MovieThumb movie={movie} key={movie.imdbID} />;
