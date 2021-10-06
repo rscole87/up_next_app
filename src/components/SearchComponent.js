@@ -6,13 +6,13 @@ const SearchArea = (props) => {
   return (
     <>
       <section id="search-section">
-        <div id="search-div">
+        <div id="search-div" className="container">
           <form
             action="GET"
             onSubmit={(e) => {
               e.preventDefault();
+              props.setPageNumber(1)
               props.performSearch();
-              props.setSearchString("");
             }}
           >
             <input type="text" placeholder="&#xF002;  Search for a title..." value={props.searchString} onChange={(e) => props.setSearchString(e.target.value)} />

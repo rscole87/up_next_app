@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Home from "./HomeComponent";
 import MediaProfile from "./MediaProfileComponent";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -9,24 +9,39 @@ const Main = () => {
   const [searchString, setSearchString] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [mediaFilter, setMediaFilter] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
 
   const performSearch = () => {
     if (mediaFilter) {
-      fetch(`http://www.omdbapi.com/?s=${searchString}&type=${mediaFilter}&apikey=1f15d0c1`)
+      let fetchUrl = `http://www.omdbapi.com/?s=${searchString}&type=${mediaFilter}&page=${pageNumber}&apikey=1f15d0c1`;
+      
+      fetch(fetchUrl)
         .then((results) => results.json())
         .then((results) => {
+          console.log(fetchUrl)
+          console.log(results)
           setSearchResults(results);
         })
         .catch((err) => console.log(`Error: ${err}`));
     } else {
-      fetch(`http://www.omdbapi.com/?s=${searchString}&apikey=1f15d0c1`)
+      let fetchUrl = `http://www.omdbapi.com/?s=${searchString}&page=${pageNumber}&apikey=1f15d0c1`;
+
+      fetch(fetchUrl)
         .then((results) => results.json())
         .then((results) => {
+          console.log(fetchUrl)
+          console.log(results)
           setSearchResults(results);
         })
         .catch((err) => console.log(`Error: ${err}`));
     }
   };
+
+
+  useEffect(() => {
+    performSearch()
+    // console.log(pageNumber)
+  }, [pageNumber])
 
   return (
     <>
@@ -43,6 +58,8 @@ const Main = () => {
             mediaFilter={mediaFilter}
             setMediaFilter={setMediaFilter}
             performSearch={performSearch}
+            pageNumber={pageNumber}
+            setPageNumber={setPageNumber}
             />} />
         <Route path="/media/:mediaId" render={() => <MediaProfile media={activeMedia} setActiveMedia={setActiveMedia} />} />
         <Redirect to="/" />

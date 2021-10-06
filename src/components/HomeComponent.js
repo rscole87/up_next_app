@@ -7,8 +7,8 @@ const Home = (props) => {
 
   return (
     <>
-      <SearchArea searchString={props.searchString} setSearchString={props.setSearchString} performSearch={props.performSearch} mediaFilter={props.mediaFilter} setMediaFilter={props.setMediaFilter} />
-      <ResultsArea searchResults={props.searchResults.Search} mediaFilter={props.mediaFilter} setActiveMedia={props.setActiveMedia}/>
+      <SearchArea searchString={props.searchString} setSearchString={props.setSearchString} performSearch={props.performSearch} mediaFilter={props.mediaFilter} setMediaFilter={props.setMediaFilter} setPageNumber={props.setPageNumber} />
+      <ResultsArea searchResults={props.searchResults.Search} mediaFilter={props.mediaFilter} setActiveMedia={props.setActiveMedia} pageNumber={props.pageNumber} setPageNumber={props.setPageNumber} />
     </>
   );
 };

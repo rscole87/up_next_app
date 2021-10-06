@@ -32,45 +32,47 @@ const MediaProfile = ({ media, setActiveMedia }) => {
   return (
     <>
       <section id="media-profile-section">
-        <div>
-          <Link to="/">
-            <button className="back-bttn" onClick={() => setActiveMedia(null)}>
-              <i className="fa fa-long-arrow-left" />
-              {` `} Back
-            </button>
-          </Link>
-        </div>
-
-        <div className="profile-content">
-          <div className="media-poster-div">
-            <img src={media.Poster} alt={media.Title} />
+        <div className="container">
+          <div>
+            <Link to="/">
+              <button className="back-bttn" onClick={() => setActiveMedia(null)}>
+                <i className="fa fa-long-arrow-left" />
+                {` `} Back
+              </button>
+            </Link>
           </div>
 
-          <div className="profile-text-div">
-            <div className="profile-header-div">
-              <h2>{media.Title}</h2>
+          <div className="profile-content">
+            <div className="media-poster-div">
+              <img src={media.Poster} alt={media.Title} />
             </div>
 
-            <div className="profile-stats-div">
-              <div>
-                <p>
-                  <span className="data-label">Director: </span> {director}
-                </p>
+            <div className="profile-text-div">
+              <div className="profile-header-div">
+                <h2>{media.Title}</h2>
+              </div>
 
-                <p>
-                  <span className="data-label">Released: </span> {releaseDate}
-                </p>
-
-                <p>
-                  <span className="data-label">Genre: </span> {genre}
-                </p>
-
-                <p>
-                  <span className="data-label">Actors: </span> {actors}
-                </p>
-
+              <div className="profile-stats-div">
                 <div>
-                  <p>{plotSummary}</p>
+                  <p>
+                    <span className="data-label">Director: </span> {director}
+                  </p>
+
+                  <p>
+                    <span className="data-label">Released: </span> {releaseDate}
+                  </p>
+
+                  <p>
+                    <span className="data-label">Genre: </span> {genre}
+                  </p>
+
+                  <p>
+                    <span className="data-label">Actors: </span> {actors}
+                  </p>
+
+                  <div>
+                    <p>{plotSummary}</p>
+                  </div>
                 </div>
               </div>
             </div>
