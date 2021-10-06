@@ -18,8 +18,6 @@ const Main = () => {
       fetch(fetchUrl)
         .then((results) => results.json())
         .then((results) => {
-          console.log(fetchUrl)
-          console.log(results)
           setSearchResults(results);
         })
         .catch((err) => console.log(`Error: ${err}`));
@@ -29,8 +27,6 @@ const Main = () => {
       fetch(fetchUrl)
         .then((results) => results.json())
         .then((results) => {
-          console.log(fetchUrl)
-          console.log(results)
           setSearchResults(results);
         })
         .catch((err) => console.log(`Error: ${err}`));
