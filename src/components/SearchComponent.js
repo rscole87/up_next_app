@@ -2,22 +2,24 @@ import React, { useState } from "react";
 
 const SearchArea = (props) => {
   const [selectOpen, setSelectOpen] = useState(false);
-  
+
   return (
     <>
       <section id="search-section">
-        <div id="search-div" className="container">
-          <form
-            action="GET"
-            onSubmit={(e) => {
-              e.preventDefault();
-              props.setPageNumber(1)
-              props.performSearch();
-            }}
-          >
-            <input type="text" placeholder="&#xF002;  Search for a title..." value={props.searchString} onChange={(e) => props.setSearchString(e.target.value)} />
-            <button type="submit">Submit</button>
-          </form>
+        <div id="search-inputs-div" className="container">
+          <div id="search-box-div">
+            <form
+              action="GET"
+              onSubmit={(e) => {
+                e.preventDefault();
+                props.setPageNumber(1);
+                props.performSearch();
+              }}
+            >
+              <input type="text" placeholder="&#xF002;  Search for a title..." value={props.searchString} onChange={(e) => props.setSearchString(e.target.value)} />
+              <button type="submit">Search</button>
+            </form>
+          </div>
 
           <div id="custom-select">
             <div id="custom-select-header" onClick={() => setSelectOpen(!selectOpen)}>
@@ -67,6 +69,7 @@ const SearchArea = (props) => {
             </div>
           </div>
         </div>
+        <hr />
       </section>
     </>
   );

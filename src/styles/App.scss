@@ -1,48 +1,99 @@
+body{
+  font-family: "Helvetica", FontAwesome, sans-serif;
+}
+
 .container {
   width: 80%;
   margin: 0 auto;
 }
 
+hr {
+  height: 3px;
+  background-color: rgba(185, 185, 185, 0.329);
+  border: none;
+  margin: 0;
+}
+
+
 #search-section {
-  input {
-    font-family: "Helvetica", FontAwesome, sans-serif;
-  }
+  background-color: rgb(245, 245, 245);
 
-  #custom-select {
-    width: 200px;
-    box-shadow: 2px 2px 15px 3px #00000007;
-    cursor: pointer;
+  #search-inputs-div {
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
 
-    #custom-select-header {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      padding: 15px 25px;
-      background-color: white;
-      border-radius: 5px;
-      color: gray;
+    @media only screen and (max-width: 575px) {
+      flex-direction: column;
+      gap: 10px;
     }
 
-    #custom-select-dropdown {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      width: 200px;
-      margin-top: 3px;
-      background-color: white;
-      border-radius: 5px;
-      overflow: hidden;
-      transition: 300ms;
-      position: absolute;
+    #search-box-div {
+      @media only screen and (max-width: 575px) {
+        width: 100%;
+      }
 
-      div {
-        padding: 5px 25px;
-        .custom-select-dropdown-option {
-          font-size: 0.8rem;
+      input, button {
+        font-family: "Helvetica", FontAwesome, sans-serif;
+        border-radius: 5px;
+        border: hidden;
+        box-shadow: 2px 2px 15px 3px #00000007;
+        padding: 15px 25px;
+
+        @media only screen and (max-width: 575px) {
+          width: 80%;
+        }
+      }
+
+      button{
+        cursor: pointer;
+        background-color: white;
+        transition: 300ms;
+
+        &:hover{
+          background-color: rgb(226, 250, 183);
         }
 
-        &:hover {
-          background-color: rgba(145, 145, 145, 0.329);
+      }
+    }
+
+    #custom-select {
+      width: 200px;
+      box-shadow: 2px 2px 15px 3px #00000007;
+      cursor: pointer;
+      font-family: "Helvetica", FontAwesome, sans-serif;
+
+      #custom-select-header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        padding: 15px 25px;
+        background-color: white;
+        border-radius: 5px;
+        color: gray;
+      }
+
+      #custom-select-dropdown {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 200px;
+        margin-top: 3px;
+        background-color: white;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: 300ms;
+        position: absolute;
+
+        div {
+          padding: 5px 25px;
+          .custom-select-dropdown-option {
+            font-size: 0.8rem;
+          }
+
+          &:hover {
+            background-color: rgba(145, 145, 145, 0.329);
+          }
         }
       }
     }
@@ -120,9 +171,9 @@
       gap: 25px;
     }
 
-    .media-poster-div{
+    .media-poster-div {
       width: 50%;
-      img{
+      img {
         height: 100%;
       }
     }
