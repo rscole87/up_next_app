@@ -1,10 +1,23 @@
-body{
+body {
   font-family: "Helvetica", FontAwesome, sans-serif;
+  margin: 0;
 }
 
 .container {
   width: 80%;
   margin: 0 auto;
+}
+
+#header-section {
+  padding: 0 0 5vh 0;
+  h1 {
+    font-size: 3rem;
+    margin: 5vh 0 0 0;
+  }
+
+  h5 {
+    margin: 0 0 25px 0;
+  }
 }
 
 hr {
@@ -13,7 +26,6 @@ hr {
   border: none;
   margin: 0;
 }
-
 
 #search-section {
   background-color: rgb(245, 245, 245);
@@ -33,7 +45,8 @@ hr {
         width: 100%;
       }
 
-      input, button {
+      input,
+      button {
         font-family: "Helvetica", FontAwesome, sans-serif;
         border-radius: 5px;
         border: hidden;
@@ -45,15 +58,14 @@ hr {
         }
       }
 
-      button{
+      button {
         cursor: pointer;
         background-color: white;
         transition: 300ms;
 
-        &:hover{
-          background-color: rgb(226, 250, 183);
+        &:hover {
+          background-color: rgb(183, 250, 250);
         }
-
       }
     }
 
@@ -101,10 +113,16 @@ hr {
 }
 
 #results-section {
+  padding: 5vh 0 10vh 0;
   #results-display-div {
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 25px;
+
+    @media only screen and (max-width: 575px) {
+      justify-content: center;
+    }
 
     .media-thumb {
       width: 200px;
@@ -115,6 +133,10 @@ hr {
       align-items: flex-end;
       box-shadow: 2px 2px 15px 3px #00000017;
       transition: 500ms;
+
+      @media only screen and (max-width: 575px) {
+        width: 250px;
+      }
 
       &:hover {
         cursor: pointer;
@@ -136,6 +158,27 @@ hr {
         h3 {
           font-size: 0.9rem;
         }
+      }
+    }
+  }
+
+  .pagination-nav-div {
+    margin: 5vh 0 0 0;
+    display: flex;
+    justify-content: center;
+    button {
+      cursor: pointer;
+      font-size: 0.8rem;
+      padding: 10px 35px;
+      background-color: white;
+      box-shadow: 2px 2px 7px 3px #00000017;
+      border: hidden;
+      border-radius: 5px;
+      transition: 300ms;
+
+      &:hover {
+        box-shadow: none;
+        background-color: #00000017;
       }
     }
   }

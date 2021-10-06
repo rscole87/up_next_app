@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Home from "./HomeComponent";
 import MediaProfile from "./MediaProfileComponent";
+import Header from "./HeaderComponent";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 const Main = () => {
@@ -36,11 +37,11 @@ const Main = () => {
 
   useEffect(() => {
     performSearch()
-    // console.log(pageNumber)
   }, [pageNumber])
 
   return (
     <>
+      <Header />
       <hr />
       <Switch>
         <Route exact path="/" render={() => <Home 
