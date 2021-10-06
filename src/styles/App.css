@@ -106,4 +106,88 @@
 #results-section #results-display-div .media-thumb .media-heading-div h3 {
   font-size: 0.9rem;
 }
+
+#media-profile-section {
+  background-color: whitesmoke;
+  padding: 5vh 0;
+}
+
+#media-profile-section .back-bttn {
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 10px 35px;
+  background-color: white;
+  -webkit-box-shadow: 2px 2px 7px 3px #00000017;
+          box-shadow: 2px 2px 7px 3px #00000017;
+  border: hidden;
+  border-radius: 5px;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+#media-profile-section .back-bttn:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #00000017;
+}
+
+#media-profile-section .profile-content {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+}
+
+@media only screen and (max-width: 575px) {
+  #media-profile-section .profile-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 25px;
+  }
+}
+
+#media-profile-section .profile-content .media-poster-div {
+  width: 50%;
+}
+
+#media-profile-section .profile-content .media-poster-div img {
+  height: 100%;
+}
+
+#media-profile-section .profile-content .profile-text-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+@media only screen and (max-width: 575px) {
+  #media-profile-section .profile-content .profile-text-div {
+    width: 100%;
+  }
+}
+
+#media-profile-section .profile-content .profile-text-div .profile-stats-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+}
+
+@media only screen and (max-width: 575px) {
+  #media-profile-section .profile-content .profile-text-div .profile-stats-div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0px;
+  }
+}
 /*# sourceMappingURL=App.css.map */

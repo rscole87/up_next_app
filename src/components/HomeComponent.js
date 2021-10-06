@@ -28,7 +28,7 @@ const Home = (props) => {
   return (
     <>
       <SearchArea searchString={searchString} setSearchString={setSearchString} performSearch={performSearch} mediaFilter={mediaFilter} setMediaFilter={setMediaFilter} />
-      <ResultsArea searchResults={searchResults.Search} mediaFilter={mediaFilter}/>
+      <ResultsArea searchResults={searchResults.Search} mediaFilter={mediaFilter} setActiveMedia={props.setActiveMedia}/>
     </>
   );
 };
