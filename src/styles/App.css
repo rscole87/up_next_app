@@ -65,7 +65,7 @@
   gap: 25px;
 }
 
-#results-section #results-display-div .movie-thumb {
+#results-section #results-display-div .media-thumb {
   width: 200px;
   height: 300px;
   border-radius: 15px;
@@ -82,17 +82,17 @@
   transition: 500ms;
 }
 
-#results-section #results-display-div .movie-thumb:hover {
+#results-section #results-display-div .media-thumb:hover {
   cursor: pointer;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-#results-section #results-display-div .movie-thumb:hover .movie-heading-div {
+#results-section #results-display-div .media-thumb:hover .media-heading-div {
   height: 25%;
 }
 
-#results-section #results-display-div .movie-thumb .movie-heading-div {
+#results-section #results-display-div .media-thumb .media-heading-div {
   width: 100%;
   height: 0%;
   padding: 0 15px;
@@ -103,7 +103,7 @@
   transition: 300ms;
 }
 
-#results-section #results-display-div .movie-thumb .movie-heading-div h3 {
+#results-section #results-display-div .media-thumb .media-heading-div h3 {
   font-size: 0.9rem;
 }
 /*# sourceMappingURL=App.css.map */

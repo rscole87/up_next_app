@@ -22,7 +22,7 @@ const SearchArea = (props) => {
           <div id="custom-select">
             <div id="custom-select-header" onClick={() => setSelectOpen(!selectOpen)}>
               <div>
-                <span>{props.mediaFilter === undefined ? "Filter by media" : props.mediaFilter === "game" ? "Games" : props.mediaFilter === "movie" ? "Movies" : "TV"}</span>
+                <span>{props.mediaFilter === "series" ? "TV" : props.mediaFilter === "game" ? "Games" : props.mediaFilter === "movie" ? "Movies" : "Filter by media"}</span>
               </div>
               <div>
                 <span>{selectOpen ? <i className="fa fa-chevron-up" /> : <i className="fa fa-chevron-down" />}</span>

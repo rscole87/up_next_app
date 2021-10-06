@@ -1,15 +1,15 @@
 import React from "react";
-import MovieThumb from "./MovieThumbComponent";
+import MediaThumb from "./MediaThumbComponent";
 
 const ResultsArea = ({ searchResults, mediaFilter }) => {
   if (searchResults) {
-    let movieKeys = [];
+    let mediaKeys = [];
 
-    let thumbs = searchResults.map((movie) => {
-      console.log(movie);
-      if (!movieKeys.includes(movie.imdbID)) {
-        movieKeys.push(movie.imdbID);
-        return <MovieThumb movie={movie} key={movie.imdbID} />;
+    let thumbs = searchResults.map((media) => {
+      console.log(media);
+      if (!mediaKeys.includes(media.imdbID)) {
+        mediaKeys.push(media.imdbID);
+        return <MediaThumb media={media} key={media.imdbID} />;
       }
     });
 
