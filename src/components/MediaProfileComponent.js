@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { act } from "react-dom/test-utils";
 import { Link } from "react-router-dom";
 
 const MediaProfile = ({ media, setActiveMedia }) => {
+  const [plotSummary, setPlotSummary] = useState("");
+  const [actors, setActors] = useState("");
+  const [director, setDirector] = useState("");
+  const [genre, setGenre] = useState("");
+  const [rated, setRated] = useState("");
+  const [releaseDate, setReleaseDate] = useState("");
+  const [runTime, setRunTime] = useState("");
+  const [imdbRating, setImdbRating] = useState("");
+
+  useEffect(() => {
+    fetch(`http://www.omdbapi.com/?i=${media.imdbID}&plot=full&apikey=1f15d0c1`)
+      .then((results) => results.json())
+      .then((results) => {
+        console.log(results);
+        setPlotSummary(results.Plot);
+        setActors(results.Actors);
+        setDirector(results.Director);
+        setGenre(results.Genre);
+        setRated(results.Rated);
+        setReleaseDate(results.Released);
+        setRunTime(results.Runtime);
+        setImdbRating(results.imdbRating);
+      })
+      .catch((err) => console.log(`Error: ${err}`));
+  }, []);
+
   return (
     <>
       <section id="media-profile-section">
@@ -15,10 +42,9 @@ const MediaProfile = ({ media, setActiveMedia }) => {
         </div>
 
         <div className="profile-content">
-            <div className="media-poster-div">
-                <img src={media.Poster} alt={media.Title} />
-            </div>
-
+          <div className="media-poster-div">
+            <img src={media.Poster} alt={media.Title} />
+          </div>
 
           <div className="profile-text-div">
             <div className="profile-header-div">
@@ -26,19 +52,27 @@ const MediaProfile = ({ media, setActiveMedia }) => {
             </div>
 
             <div className="profile-stats-div">
-              {/* <div>
+              <div>
                 <p>
-                  <span className="data-label">Region: </span> {country.region}
+                  <span className="data-label">Director: </span> {director}
                 </p>
 
                 <p>
-                  <span className="data-label">Capital: </span> {country.capital}
+                  <span className="data-label">Released: </span> {releaseDate}
                 </p>
 
                 <p>
-                  <span className="data-label">Top Level Domain: </span> {country.topLevelDomain[0]}
+                  <span className="data-label">Genre: </span> {genre}
                 </p>
-              </div> */}
+
+                <p>
+                  <span className="data-label">Actors: </span> {actors}
+                </p>
+
+                <div>
+                  <p>{plotSummary}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

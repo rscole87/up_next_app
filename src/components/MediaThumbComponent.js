@@ -6,7 +6,8 @@ const MediaThumb = ({ media, setActiveMedia }) => {
     <Link to={`/media/${media.imdbID}`} >
 
     <div className="media-thumb" 
-      onClick={setActiveMedia(media)}
+      onClick={() => {
+        setActiveMedia(media)}}
       style={{ backgroundImage: `url(${media.Poster})`, backgroundPosition: "center", backgroundSize: "cover" }}>
       <div className="media-heading-div">
         <h3>

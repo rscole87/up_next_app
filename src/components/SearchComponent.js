@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const SearchArea = (props) => {
   const [selectOpen, setSelectOpen] = useState(false);
-  console.log(props.mediaFilter);
+  
   return (
     <>
       <section id="search-section">

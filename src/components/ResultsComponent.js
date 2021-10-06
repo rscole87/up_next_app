@@ -6,7 +6,6 @@ const ResultsArea = ({ searchResults, mediaFilter, setActiveMedia }) => {
     let mediaKeys = [];
 
     let thumbs = searchResults.map((media) => {
-      console.log(media);
       if (!mediaKeys.includes(media.imdbID)) {
         mediaKeys.push(media.imdbID);
         return <MediaThumb media={media} key={media.imdbID} setActiveMedia={setActiveMedia}/>;
