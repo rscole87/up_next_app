@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { act } from "react-dom/test-utils";
 import { Link } from "react-router-dom";
 
 const MediaProfile = ({ media, setActiveMedia }) => {
@@ -59,7 +58,19 @@ const MediaProfile = ({ media, setActiveMedia }) => {
                   </p>
 
                   <p>
+                    <span className="data-label">Actors: </span> {actors}
+                  </p>
+                  
+                  <p>
                     <span className="data-label">Released: </span> {releaseDate}
+                  </p>
+                  
+                  <p>
+                    <span className="data-label">Rated: </span> {rated}
+                  </p>
+                  
+                  <p>
+                    <span className="data-label">Runtime: </span> {runTime}
                   </p>
 
                   <p>
@@ -67,7 +78,7 @@ const MediaProfile = ({ media, setActiveMedia }) => {
                   </p>
 
                   <p>
-                    <span className="data-label">Actors: </span> {actors}
+                    <span className="data-label">IMDB Rating: </span> {imdbRating}
                   </p>
 
                   <div>

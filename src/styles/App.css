@@ -165,10 +165,15 @@ hr {
   }
 }
 
+#results-section #results-display-div a {
+  text-decoration: none;
+  color: #353535;
+}
+
 #results-section #results-display-div .media-thumb {
   width: 200px;
   height: 300px;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -284,12 +289,23 @@ hr {
   }
 }
 
+#media-profile-section .profile-content .data-label {
+  font-weight: bold;
+}
+
 #media-profile-section .profile-content .media-poster-div {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #media-profile-section .profile-content .media-poster-div img {
   height: 100%;
+  border-radius: 10px;
 }
 
 #media-profile-section .profile-content .profile-text-div {

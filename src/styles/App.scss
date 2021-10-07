@@ -124,10 +124,15 @@ hr {
       justify-content: center;
     }
 
+    a{
+      text-decoration: none;
+      color: rgb(53, 53, 53);
+    }
+
     .media-thumb {
       width: 200px;
       height: 300px;
-      border-radius: 15px;
+      border-radius: 10px;
       overflow: hidden;
       display: flex;
       align-items: flex-end;
@@ -214,10 +219,17 @@ hr {
       gap: 25px;
     }
 
+    .data-label {
+      font-weight: bold;
+    }
+
     .media-poster-div {
       width: 50%;
+      display: flex;
+      justify-content: center;
       img {
         height: 100%;
+        border-radius: 10px;
       }
     }
 

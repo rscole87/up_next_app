@@ -34,8 +34,14 @@ const ResultsArea = ({ searchResults, mediaFilter, setActiveMedia, pageNumber, s
             </div>
             <div id="results-display-div">{thumbs}</div>
             <div className="pagination-nav-div">
-              <button onClick={() => decrementPageNumber()}>Prev</button>
-              <button onClick={() => incrementPageNumber()}>Next</button>
+              <button onClick={() => decrementPageNumber()}>
+                <i className="fa fa-long-arrow-left" />{" "}
+                Prev
+              </button>
+              <button onClick={() => incrementPageNumber()}>
+                Next{" "}
+                <i className="fa fa-long-arrow-right" />
+              </button>
             </div>
           </div>
         </section>
