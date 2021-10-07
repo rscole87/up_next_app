@@ -1,19 +1,17 @@
 import React from "react";
 import MediaThumb from "./MediaThumbComponent";
+import ScrollToTop from "./ScrollToTop";
 
 const ResultsArea = ({ searchResults, mediaFilter, setActiveMedia, pageNumber, setPageNumber }) => {
-
   const incrementPageNumber = () => {
-    setPageNumber(prev => prev + 1)
-  }
+    setPageNumber((prev) => prev + 1);
+  };
 
   const decrementPageNumber = () => {
-    if(pageNumber > 1){
-      setPageNumber(prev => prev - 1)
+    if (pageNumber > 1) {
+      setPageNumber((prev) => prev - 1);
     }
-  }
-
-
+  };
 
   if (searchResults) {
     let mediaKeys = [];
@@ -27,6 +25,8 @@ const ResultsArea = ({ searchResults, mediaFilter, setActiveMedia, pageNumber, s
 
     return (
       <>
+        <ScrollToTop />
+
         <section id="results-section">
           <div className="container">
             <div>

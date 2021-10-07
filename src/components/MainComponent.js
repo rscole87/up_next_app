@@ -3,6 +3,7 @@ import Home from "./HomeComponent";
 import MediaProfile from "./MediaProfileComponent";
 import Header from "./HeaderComponent";
 import { Switch, Route, Redirect } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
 
 const Main = () => {
   const [watchList, setWatchList] = useState([]);
@@ -15,7 +16,7 @@ const Main = () => {
   const performSearch = () => {
     if (mediaFilter) {
       let fetchUrl = `http://www.omdbapi.com/?s=${searchString}&type=${mediaFilter}&page=${pageNumber}&apikey=1f15d0c1`;
-      
+
       fetch(fetchUrl)
         .then((results) => results.json())
         .then((results) => {
@@ -34,30 +35,17 @@ const Main = () => {
     }
   };
 
-
   useEffect(() => {
-    performSearch()
-  }, [pageNumber])
+    performSearch();
+  }, [pageNumber, mediaFilter]);
 
   return (
     <>
+      <ScrollToTop />
       <Header />
       <hr />
       <Switch>
-        <Route exact path="/" render={() => <Home 
-            watchList={watchList} 
-            setWatchList={setWatchList} 
-            setActiveMedia={setActiveMedia} 
-            searchString={searchString}
-            setSearchString={setSearchString}
-            searchResults={searchResults}
-            setSearchResults={setSearchResults}
-            mediaFilter={mediaFilter}
-            setMediaFilter={setMediaFilter}
-            performSearch={performSearch}
-            pageNumber={pageNumber}
-            setPageNumber={setPageNumber}
-            />} />
+        <Route exact path="/" render={() => <Home watchList={watchList} setWatchList={setWatchList} setActiveMedia={setActiveMedia} searchString={searchString} setSearchString={setSearchString} searchResults={searchResults} setSearchResults={setSearchResults} mediaFilter={mediaFilter} setMediaFilter={setMediaFilter} performSearch={performSearch} pageNumber={pageNumber} setPageNumber={setPageNumber} />} />
         <Route path="/media/:mediaId" render={() => <MediaProfile media={activeMedia} setActiveMedia={setActiveMedia} />} />
         <Redirect to="/" />
       </Switch>

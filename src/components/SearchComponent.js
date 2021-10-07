@@ -34,6 +34,7 @@ const SearchArea = (props) => {
               <div
                 onClick={() => {
                   props.setMediaFilter(null);
+                  props.setPageNumber(1);
                   setSelectOpen(false);
                 }}
               >
@@ -43,6 +44,7 @@ const SearchArea = (props) => {
               <div
                 onClick={() => {
                   props.setMediaFilter("movie");
+                  props.setPageNumber(1);
                   setSelectOpen(false);
                 }}
               >
@@ -52,6 +54,7 @@ const SearchArea = (props) => {
               <div
                 onClick={() => {
                   props.setMediaFilter("series");
+                  props.setPageNumber(1);
                   setSelectOpen(false);
                 }}
               >
@@ -61,6 +64,7 @@ const SearchArea = (props) => {
               <div
                 onClick={() => {
                   props.setMediaFilter("game");
+                  props.setPageNumber(1);
                   setSelectOpen(false);
                 }}
               >
