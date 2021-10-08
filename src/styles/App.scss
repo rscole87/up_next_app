@@ -117,11 +117,15 @@ hr {
     }
 
     #custom-select {
-      margin: 0 auto;
+      
       width: 200px;
       box-shadow: 2px 2px 15px 3px #00000007;
       cursor: pointer;
       font-family: "Helvetica", FontAwesome, sans-serif;
+
+      @media only screen and (max-width: 575px) {
+        margin: 0 auto;
+      }
 
       #custom-select-header {
         display: flex;
@@ -206,7 +210,7 @@ hr {
         width: 100%;
         height: 0%;
         padding: 0 15px;
-        background-color: rgba(240, 248, 255, 0.774);
+        background-color: rgba(255, 255, 255, 0.582);
         backdrop-filter: blur(5px);
         transition: 300ms;
 
@@ -255,6 +259,22 @@ hr {
   }
 }
 
+.queue-add-bttn {
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 10px 20px;
+  background-color: rgb(226, 250, 250);
+  box-shadow: 2px 2px 7px 3px #00000017;
+  border: hidden;
+  border-radius: 5px;
+  transition: 300ms;
+
+  &:hover {
+    box-shadow: none;
+    background-color: rgb(183, 250, 250);
+  }
+}
+
 #media-profile-section {
   background-color: rgb(245, 245, 245);
   padding: 5vh 0;
@@ -275,11 +295,12 @@ hr {
 
     .media-poster-div {
       width: 50%;
+      overflow: hidden;
       display: flex;
       justify-content: center;
 
       img {
-        height: 100%;
+        height: 50vh;
         border-radius: 10px;
       }
 
@@ -359,7 +380,7 @@ hr {
         width: 100%;
         height: 0%;
         padding: 0 15px;
-        background-color: rgba(240, 248, 255, 0.774);
+        background-color: rgba(255, 255, 255, 0.582);
         backdrop-filter: blur(5px);
         transition: 300ms;
 

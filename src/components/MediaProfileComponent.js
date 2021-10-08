@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import movieIcon from '../images/movie.png'
+import tvIcon from '../images/tv.png'
+import gameIcon from '../images/game.png'
 import { Link } from "react-router-dom";
 
 const MediaProfile = (props) => {
@@ -43,7 +46,12 @@ const MediaProfile = (props) => {
 
           <div className="profile-content">
             <div className="media-poster-div">
-              <img src={props.media.Poster} alt={props.media.Title} />
+              <img src={
+                props.media.Poster === "N/A" && props.media.Type === "movie" ? movieIcon
+              : props.media.Poster === "N/A" && props.media.Type === "game" ? gameIcon
+              : props.media.Poster === "N/A" && props.media.Type === "series" ? tvIcon
+              : props.media.Poster
+              } alt={props.media.Title} />
             </div>
 
             <div className="profile-text-div">
@@ -52,11 +60,11 @@ const MediaProfile = (props) => {
                 <h2>{props.media.Title}</h2>
                 </div>
                 <div>
-                  {isInQueue ? <button onClick={() => {
+                  {isInQueue ? <button className="queue-add-bttn" onClick={() => {
                     props.removeItemFromQueue(props.media.imdbID)
                     setIsInQueue(!isInQueue)
                     }}>Remove from queue</button>
-                  : <button onClick={() => {
+                  : <button className="queue-add-bttn" onClick={() => {
                     props.addItemToQueue(props.media.imdbID)
                     setIsInQueue(!isInQueue)
                     }}>Add to queue</button>
