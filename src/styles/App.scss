@@ -8,6 +8,32 @@ body {
   margin: 0 auto;
 }
 
+nav{
+  background-color: rgb(75, 75, 75);
+  
+  div.container{
+    a{
+      text-decoration: none;
+      color: white;
+      transition: 500ms;
+
+      &:hover{
+        color: rgb(183, 250, 250);
+      }
+    }
+
+    div{
+      display: flex;
+      justify-content: end;
+      padding: 2vh 0;
+
+      i{
+        margin: 0 5px 0 0;
+      }
+    }
+  }
+}
+
 #header-section {
   padding: 0 0 5vh 0;
   h1 {
@@ -249,6 +275,63 @@ hr {
         @media only screen and (max-width: 575px) {
           flex-direction: column;
           gap: 0px;
+        }
+      }
+    }
+  }
+}
+
+
+#user-profile-section {
+  padding: 5vh 0 10vh 0;
+  #queue-display-div {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    @media only screen and (max-width: 575px) {
+      justify-content: center;
+    }
+
+    a{
+      text-decoration: none;
+      color: rgb(53, 53, 53);
+    }
+
+    .media-thumb {
+      width: 200px;
+      height: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      box-shadow: 2px 2px 15px 3px #00000017;
+      transition: 500ms;
+
+      @media only screen and (max-width: 575px) {
+        width: 250px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+
+        .media-heading-div {
+          height: 25%;
+        }
+      }
+
+      .media-heading-div {
+        width: 100%;
+        height: 0%;
+        padding: 0 15px;
+        background-color: rgba(240, 248, 255, 0.774);
+        backdrop-filter: blur(5px);
+        transition: 300ms;
+
+        h3 {
+          font-size: 0.9rem;
         }
       }
     }

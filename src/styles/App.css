@@ -8,6 +8,35 @@ body {
   margin: 0 auto;
 }
 
+nav {
+  background-color: #4b4b4b;
+}
+
+nav div.container a {
+  text-decoration: none;
+  color: white;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+nav div.container a:hover {
+  color: #b7fafa;
+}
+
+nav div.container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  padding: 2vh 0;
+}
+
+nav div.container div i {
+  margin: 0 5px 0 0;
+}
+
 #header-section {
   padding: 0 0 5vh 0;
 }
@@ -340,5 +369,82 @@ hr {
             flex-direction: column;
     gap: 0px;
   }
+}
+
+#user-profile-section {
+  padding: 5vh 0 10vh 0;
+}
+
+#user-profile-section #queue-display-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 25px;
+}
+
+@media only screen and (max-width: 575px) {
+  #user-profile-section #queue-display-div {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+#user-profile-section #queue-display-div a {
+  text-decoration: none;
+  color: #353535;
+}
+
+#user-profile-section #queue-display-div .media-thumb {
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-shadow: 2px 2px 15px 3px #00000017;
+          box-shadow: 2px 2px 15px 3px #00000017;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+@media only screen and (max-width: 575px) {
+  #user-profile-section #queue-display-div .media-thumb {
+    width: 250px;
+  }
+}
+
+#user-profile-section #queue-display-div .media-thumb:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+#user-profile-section #queue-display-div .media-thumb:hover .media-heading-div {
+  height: 25%;
+}
+
+#user-profile-section #queue-display-div .media-thumb .media-heading-div {
+  width: 100%;
+  height: 0%;
+  padding: 0 15px;
+  background-color: rgba(240, 248, 255, 0.774);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+#user-profile-section #queue-display-div .media-thumb .media-heading-div h3 {
+  font-size: 0.9rem;
 }
 /*# sourceMappingURL=App.css.map */
