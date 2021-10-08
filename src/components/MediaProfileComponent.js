@@ -13,7 +13,7 @@ const MediaProfile = (props) => {
   const [isInQueue, setIsInQueue] = useState(props.queueList.includes(props.media.imdbID))
 
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?i=${props.media.imdbID}&plot=full&apikey=1f15d0c1`)
+    fetch(`https://www.omdbapi.com/?i=${props.media.imdbID}&plot=full&apikey=1f15d0c1`)
       .then((results) => results.json())
       .then((results) => {
         setPlotSummary(results.Plot);

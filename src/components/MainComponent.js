@@ -27,7 +27,7 @@ const Main = () => {
 
   const performSearch = () => {
     if (mediaFilter) {
-      let fetchUrl = `http://www.omdbapi.com/?s=${searchString}&type=${mediaFilter}&page=${pageNumber}&apikey=1f15d0c1`;
+      let fetchUrl = `https://www.omdbapi.com/?s=${searchString}&type=${mediaFilter}&page=${pageNumber}&apikey=1f15d0c1`;
 
       fetch(fetchUrl)
         .then((results) => results.json())
@@ -36,7 +36,7 @@ const Main = () => {
         })
         .catch((err) => console.log(`Error: ${err}`));
     } else {
-      let fetchUrl = `http://www.omdbapi.com/?s=${searchString}&page=${pageNumber}&apikey=1f15d0c1`;
+      let fetchUrl = `https://www.omdbapi.com/?s=${searchString}&page=${pageNumber}&apikey=1f15d0c1`;
 
       fetch(fetchUrl)
         .then((results) => results.json())

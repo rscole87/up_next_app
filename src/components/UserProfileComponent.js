@@ -6,7 +6,7 @@ const UserProfile = (props) => {
   const [thumbList, setThumbList] = useState([]);
 
   const performSearch = (id) => {
-    let fetchUrl = `http://www.omdbapi.com/?i=${id}&apikey=1f15d0c1`;
+    let fetchUrl = `https://www.omdbapi.com/?i=${id}&apikey=1f15d0c1`;
     fetch(fetchUrl)
       .then((results) => results.json())
       .then((results) => {
