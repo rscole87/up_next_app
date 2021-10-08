@@ -215,25 +215,26 @@ hr {
   }
 }
 
+.back-bttn {
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 10px 35px;
+  background-color: white;
+  box-shadow: 2px 2px 7px 3px #00000017;
+  border: hidden;
+  border-radius: 5px;
+  transition: 300ms;
+
+  &:hover {
+    box-shadow: none;
+    background-color: #00000017;
+  }
+}
+
 #media-profile-section {
   background-color: rgb(245, 245, 245);
   padding: 5vh 0;
 
-  .back-bttn {
-    cursor: pointer;
-    font-size: 0.8rem;
-    padding: 10px 35px;
-    background-color: white;
-    box-shadow: 2px 2px 7px 3px #00000017;
-    border: hidden;
-    border-radius: 5px;
-    transition: 300ms;
-
-    &:hover {
-      box-shadow: none;
-      background-color: #00000017;
-    }
-  }
 
   .profile-content {
     margin: 10px 0;
@@ -285,6 +286,7 @@ hr {
 #user-profile-section {
   padding: 5vh 0 10vh 0;
   #queue-display-div {
+    margin: 2vh 0 0 0;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const MediaProfile = ({ media, setActiveMedia }) => {
+const MediaProfile = (props) => {
   const [plotSummary, setPlotSummary] = useState("");
   const [actors, setActors] = useState("");
   const [director, setDirector] = useState("");
@@ -10,9 +10,10 @@ const MediaProfile = ({ media, setActiveMedia }) => {
   const [releaseDate, setReleaseDate] = useState("");
   const [runTime, setRunTime] = useState("");
   const [imdbRating, setImdbRating] = useState("");
+  const [isInQueue, setIsInQueue] = useState(props.queueList.includes(props.media.imdbID))
 
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?i=${media.imdbID}&plot=full&apikey=1f15d0c1`)
+    fetch(`http://www.omdbapi.com/?i=${props.media.imdbID}&plot=full&apikey=1f15d0c1`)
       .then((results) => results.json())
       .then((results) => {
         console.log(results);
@@ -34,7 +35,7 @@ const MediaProfile = ({ media, setActiveMedia }) => {
         <div className="container">
           <div>
             <Link to="/">
-              <button className="back-bttn" onClick={() => setActiveMedia(null)}>
+              <button className="back-bttn" onClick={() => props.setActiveMedia(null)}>
                 <i className="fa fa-long-arrow-left" />
                 {` `} Back
               </button>
@@ -43,12 +44,26 @@ const MediaProfile = ({ media, setActiveMedia }) => {
 
           <div className="profile-content">
             <div className="media-poster-div">
-              <img src={media.Poster} alt={media.Title} />
+              <img src={props.media.Poster} alt={props.media.Title} />
             </div>
 
             <div className="profile-text-div">
               <div className="profile-header-div">
-                <h2>{media.Title}</h2>
+                <div>
+                <h2>{props.media.Title}</h2>
+                </div>
+                <div>
+                  {isInQueue ? <button onClick={() => {
+                    props.removeItemFromQueue(props.media.imdbID)
+                    setIsInQueue(!isInQueue)
+                    }}>Remove from queue</button>
+                  : <button onClick={() => {
+                    props.addItemToQueue(props.media.imdbID)
+                    setIsInQueue(!isInQueue)
+                    }}>Add to queue</button>
+                  }
+                </div>
+
               </div>
 
               <div className="profile-stats-div">

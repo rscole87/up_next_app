@@ -9,7 +9,7 @@ const Navbar = (props) => {
           <div>
             <span>
             <Link to="/queue">
-              <i className="fa-th-list fa-lg" /> {props.queueList.length ? props.queueList.length : 0}
+              <i className="fa-th-list fa-lg" /> {props.queueList.length}
             </Link>
             </span>
           </div>
