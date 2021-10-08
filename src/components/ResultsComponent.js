@@ -30,7 +30,7 @@ const ResultsArea = ({ searchResults, mediaFilter, setActiveMedia, pageNumber, s
         <section id="results-section">
           <div className="container">
             <div>
-              <h2>{mediaFilter === undefined ? "Filter by media" : mediaFilter === "game" ? "Games" : mediaFilter === "movie" ? "Movies" : "TV"}</h2>
+              <h2>{mediaFilter === null ? "All Media" : mediaFilter === "game" ? "Games" : mediaFilter === "movie" ? "Movies" : "TV"}</h2>
             </div>
             <div id="results-display-div">{thumbs}</div>
             <div className="pagination-nav-div">

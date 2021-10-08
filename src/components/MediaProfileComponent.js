@@ -16,7 +16,6 @@ const MediaProfile = (props) => {
     fetch(`http://www.omdbapi.com/?i=${props.media.imdbID}&plot=full&apikey=1f15d0c1`)
       .then((results) => results.json())
       .then((results) => {
-        console.log(results);
         setPlotSummary(results.Plot);
         setActors(results.Actors);
         setDirector(results.Director);
