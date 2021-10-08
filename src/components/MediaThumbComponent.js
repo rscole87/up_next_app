@@ -12,12 +12,11 @@ const MediaThumb = ({ media, setActiveMedia }) => {
       onClick={() => {
         setActiveMedia(media)}}
 
-        style={
-         media.Poster === "N/A" && media.Type === "movie" ? {backgroundImage: `url(${movieIcon}`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat" }
-        : media.Poster === "N/A" && media.Type === "game" ? {backgroundImage: `url(${gameIcon}`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat" }
-        : media.Poster === "N/A" && media.Type === "series" ? {backgroundImage: `url(${tvIcon}`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat" }
-        : {backgroundImage: `url(${media.Poster}`, backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }
-        }
+        style={{backgroundImage: `url(${
+          media.Poster === "N/A" && media.Type === "movie" ? movieIcon
+        : media.Poster === "N/A" && media.Type === "game" ? gameIcon
+        : media.Poster === "N/A" && media.Type === "series" ? tvIcon
+        : media.Poster})` , backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}
       >
         
       <div className="media-heading-div">

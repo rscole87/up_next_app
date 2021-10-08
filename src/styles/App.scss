@@ -8,27 +8,28 @@ body {
   margin: 0 auto;
 }
 
-nav{
+nav {
   background-color: rgb(75, 75, 75);
-  
-  div.container{
-    a{
+
+  div.container {
+    a {
       text-decoration: none;
       color: white;
       transition: 500ms;
 
-      &:hover{
+      &:hover {
         color: rgb(183, 250, 250);
       }
     }
 
-    div{
+    div {
       display: flex;
-      justify-content: end;
-      padding: 2vh 0;
+      justify-content: flex-end;
+      padding: 1.5vh 0;
 
-      i{
-        margin: 0 5px 0 0;
+      i {
+        font-size: 2rem;
+        margin: 0 10px 0 0;
       }
     }
   }
@@ -43,6 +44,18 @@ nav{
 
   h5 {
     margin: 0 0 25px 0;
+  }
+
+  @media only screen and (max-width: 575px) {
+    h1 {
+      font-size: 2.5rem;
+      margin: 2vh 0 0 0;
+    }
+
+    h5 {
+      font-size: 0.7rem;
+      margin: 0 0 15px 0;
+    }
   }
 }
 
@@ -68,7 +81,11 @@ hr {
 
     #search-box-div {
       @media only screen and (max-width: 575px) {
-        width: 100%;
+        form {
+          display: flex;
+          justify-content: space-around;
+          width: 100%;
+        }
       }
 
       input,
@@ -80,7 +97,7 @@ hr {
         padding: 15px 25px;
 
         @media only screen and (max-width: 575px) {
-          width: 80%;
+          width: 85%;
         }
       }
 
@@ -89,6 +106,10 @@ hr {
         background-color: white;
         transition: 300ms;
 
+        @media only screen and (max-width: 575px) {
+          width: 50%;
+        }
+
         &:hover {
           background-color: rgb(183, 250, 250);
         }
@@ -96,6 +117,7 @@ hr {
     }
 
     #custom-select {
+      margin: 0 auto;
       width: 200px;
       box-shadow: 2px 2px 15px 3px #00000007;
       cursor: pointer;
@@ -147,10 +169,11 @@ hr {
     gap: 25px;
 
     @media only screen and (max-width: 575px) {
-      justify-content: center;
+      // justify-content: space-between;
+      gap: 15px;
     }
 
-    a{
+    a {
       text-decoration: none;
       color: rgb(53, 53, 53);
     }
@@ -166,7 +189,8 @@ hr {
       transition: 500ms;
 
       @media only screen and (max-width: 575px) {
-        width: 250px;
+        width: 125px;
+        height: 200px;
       }
 
       &:hover {
@@ -235,7 +259,6 @@ hr {
   background-color: rgb(245, 245, 245);
   padding: 5vh 0;
 
-
   .profile-content {
     margin: 10px 0;
     display: flex;
@@ -254,9 +277,18 @@ hr {
       width: 50%;
       display: flex;
       justify-content: center;
+
       img {
         height: 100%;
         border-radius: 10px;
+      }
+
+      @media only screen and (max-width: 575px) {
+        width: 100%;
+
+        img {
+          height: 30vh;
+        }
       }
     }
 
@@ -282,7 +314,6 @@ hr {
   }
 }
 
-
 #user-profile-section {
   padding: 5vh 0 10vh 0;
   #queue-display-div {
@@ -296,7 +327,7 @@ hr {
       justify-content: center;
     }
 
-    a{
+    a {
       text-decoration: none;
       color: rgb(53, 53, 53);
     }
